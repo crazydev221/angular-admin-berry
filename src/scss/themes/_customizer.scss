@@ -1,0 +1,38 @@
+/**======================================================================
+=========================================================================
+Template Name: berry - Most Complete Bootstrap Admin Template
+Author: berry
+Support: berry@gmail.com
+File: style.css
+=========================================================================
+=================================================================================== */
+// theme font
+// main framework
+$menu-styler: 280px;
+$pct-colors: ();
+$pct-colors: map-merge(
+  (
+    'primary': $primary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'dark': $dark
+  ),
+  $pct-colors
+);
+
+.pct-c-btn {
+  display: block;
+  padding: 0;
+  position: fixed;
+  right: 10px;
+  top: 200px;
+  z-index: 1030;
+  transition: all 0.15s ease-in-out;
+  .btn {
+    padding: 12px;
+    border-radius: 50% 50% 4px 50%;
+    box-shadow: 0px 12px 14px 0px rgba(103, 58, 183, 0.3);
+  }
+}

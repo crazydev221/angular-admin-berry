@@ -1,0 +1,91 @@
+// ============================
+//     Sidebar css start
+// ============================
+
+.pc-sidebar {
+  background: $sidebar-background;
+  width: $sidebar-width;
+  position: fixed;
+  top: $header-height;
+  bottom: 0;
+  z-index: 1026;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .m-header {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+
+    .logo-sm {
+      display: none;
+    }
+  }
+  .navbar-content {
+    position: relative;
+    height: calc(100vh - #{$header-height});
+    padding: 10px 0;
+  }
+
+  .pc-navbar-card {
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    margin: 20px;
+
+    &::before {
+      border: 3px solid;
+      top: 145px;
+      right: -70px;
+    }
+
+    &::after {
+      border: 19px solid;
+      top: 65px;
+      right: -150px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .m-header {
+    display: none;
+  }
+}
+.pc-sidebar.mob-open .m-header {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .pc-sidebar {
+    left: -#{$sidebar-width};
+    box-shadow: none;
+    top: 0;
+    transition: all 0.15s ease-in-out;
+
+    &.mob-open {
+      left: 0;
+      box-shadow: $sidebar-shadow;
+
+      .navbar-wrapper {
+        position: relative;
+        z-index: 5;
+        background: inherit;
+      }
+    }
+  }
+}
+
+// Sidebar css end

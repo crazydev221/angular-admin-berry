@@ -1,0 +1,72 @@
+/**  =====================
+      Custom css start
+==========================  **/
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+.accordion {
+  --#{$prefix}accordion-color: #{$body-color};
+}
+a {
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:not([href]) {
+    color: inherit;
+  }
+}
+
+p {
+  font-size: 14px;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+.btn-page {
+  .btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .btn-group {
+    .btn {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* ========================================================
+ ===============     document      ======================
+ ========================================================*/
+
+.color-card {
+  .card-body {
+    margin: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    background: rgba(107, 117, 125, 0.08);
+    border-radius: $border-radius;
+  }
+}
+.color-block {
+  border-radius: $border-radius;
+  margin: 4px 0;
+  @each $name, $value in $more-colors {
+    $i: 100;
+    @while $i<=900 {
+      &.bg-#{$name}-#{$i} {
+        color: color-contrast(map-get($value, $i));
+      }
+      &.text-#{$name}-#{$i} {
+        background-color: color-contrast(map-get($value, $i));
+      }
+      $i: $i + 100;
+    }
+  }
+}
